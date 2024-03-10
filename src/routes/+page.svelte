@@ -1,10 +1,5 @@
 <script lang="ts">
-    import top_tournament from "$lib/markdown/leaderboardfish.md?raw";
-    import top_count from "$lib/markdown/leaderboardtotalcount.md?raw";
-    import top_trophies from "$lib/markdown/leaderboardtrophies.md?raw";
-    import top_type from "$lib/markdown/leaderboardtype.md?raw";
-    import top_weight from "$lib/markdown/leaderboardweight.md?raw";
-    import { marked } from "marked";
+    import AsyncMarkdownReq from "$lib/AsyncMarkdownReq.svelte";
 </script>
 
 <h1 class="ml-32 mb-4 mt-8">gofish leaderboards woaow!</h1>
@@ -12,25 +7,35 @@
 <div class="ml-32 mr-32">
     <div class="flex flex-row">
         <div class="w-1/2">
-            {@html marked.parse(top_tournament)}
+            <AsyncMarkdownReq
+                url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboardfish.md"
+            />
         </div>
         <div class="w-1/2">
-            {@html marked.parse(top_count)}
+            <AsyncMarkdownReq
+                url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboardtotalcount.md"
+            />
         </div>
     </div>
     <hr />
     <div class="flex flex-row">
         <div class="w-1/2">
-            {@html marked.parse(top_trophies)}
+            <AsyncMarkdownReq
+                url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboardtrophies.md"
+            />
         </div>
         <div class="w-1/2">
-            {@html marked.parse(top_type)}
+            <AsyncMarkdownReq
+                url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboardtype.md"
+            />
         </div>
     </div>
     <hr />
     <div class="flex flex-row shrink">
         <div class="w-1/2">
-            {@html marked.parse(top_weight)}
+            <AsyncMarkdownReq
+                url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboardweight.md"
+            />
         </div>
     </div>
 </div>
