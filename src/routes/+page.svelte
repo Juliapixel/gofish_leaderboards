@@ -2,7 +2,7 @@
     import AsyncMarkdownReq from "$lib/AsyncMarkdownReq.svelte";
 </script>
 
-<h1 class="ml-32 mb-4 mt-8">gofish leaderboards woaow!</h1>
+<h1 class="ml-32 mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
 
 <div class="ml-32 mr-32">
     <div class="flex flex-row">
