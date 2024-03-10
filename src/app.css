@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        @apply bg-neutral-900 text-neutral-300;
+    }
+
+    a {
+        @apply text-blue-500 cursor-pointer;
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-lg font-bold mb-2;
+    }
+
+    hr {
+        @apply mt-8 mb-8 border-neutral-500;
+    }
+
+    table {
+        @apply h-[50rem] overflow-y-scroll block max-w-fit;
+        @apply rounded-xl border border-neutral-500;
+    }
+
+    tr:nth-child(2n + 1) {
+        @apply bg-neutral-800;
+    }
+
+    th {
+        @apply text-left p-2 border-l border-l-neutral-700 border-b border-b-neutral-500;
+    }
+
+    td {
+        @apply p-1 border-l border-l-neutral-700;
+    }
+}
