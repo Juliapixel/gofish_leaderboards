@@ -36,4 +36,6 @@
 </div>
 <footer class="mt-12 mb-8 ml-32">
     gofish by <a href="https://twitch.tv/breadworms">breadworms</a>
+    <br />
+    source <a href="https://github.com/Juliapixel/gofish_leaderboards">here</a>
 </footer>
