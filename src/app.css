@@ -28,6 +28,10 @@
         @apply rounded-xl border border-neutral-500;
     }
 
+    em {
+        @apply text-neutral-500 text-sm;
+    }
+
     tr:nth-child(2n + 1) {
         @apply bg-neutral-800;
     }
