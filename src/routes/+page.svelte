@@ -1,6 +1,9 @@
 <script lang="ts">
     import AsyncMarkdownReq from "$lib/AsyncMarkdownReq.svelte";
+    import Meta from "$lib/Meta.svelte";
 </script>
+
+<Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
 
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
