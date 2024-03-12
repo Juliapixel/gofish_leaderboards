@@ -3,6 +3,8 @@
 based on [https://github.com/blableblup/gofish](https://github.com/blableblup/gofish)'s
 leaderboards
 
+you can see it in action [here](https://gofish.juliapixel.com)
+
 ## building
 
 just uh
