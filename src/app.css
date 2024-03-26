@@ -19,12 +19,16 @@
         @apply text-lg font-bold mb-2;
     }
 
+    select {
+        @apply bg-neutral-800 p-1 rounded-md border border-neutral-500;
+    }
+
     hr {
         @apply mt-8 mb-8 border-neutral-500;
     }
 
     table {
-        @apply h-[50rem] overflow-y-scroll block max-w-fit whitespace-nowrap;
+        @apply max-h-[50rem] overflow-y-scroll block max-w-fit whitespace-nowrap;
         @apply rounded-xl border border-neutral-500;
     }
 
