@@ -1,15 +1,26 @@
 <script lang="ts">
     import Leaderboards from "$lib/Leaderboards.svelte";
     import Meta from "$lib/Meta.svelte";
+    import { onMount } from "svelte";
 
-    let selected = "bw";
+    let selected: string = "bw";
+    onMount(() => {
+        let stored = localStorage.getItem("channel");
+        selected = stored === null ? selected : (stored as string);
+        console.log(selected);
+        console.log(stored);
+    });
+
+    function storeChannel(this: HTMLSelectElement) {
+        localStorage.setItem("channel", this.value);
+    }
 </script>
 
 <Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
 
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
-    <select bind:value={selected} class="mt-5 mb-5">
+    <select bind:value={selected} on:change={storeChannel} class="mt-5 mb-5">
         <option value="bw">breadworms</option>
         <option value="psp">psp1g</option>
     </select>
