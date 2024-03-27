@@ -4,11 +4,11 @@
     import { onMount } from "svelte";
 
     let selected: string = "bw";
+    let loaded = false;
     onMount(() => {
         let stored = localStorage.getItem("channel");
         selected = stored === null ? selected : (stored as string);
-        console.log(selected);
-        console.log(stored);
+        loaded = true;
     });
 
     function storeChannel(this: HTMLSelectElement) {
@@ -25,7 +25,9 @@
         <option value="psp">psp1g</option>
     </select>
 
-    <Leaderboards folder={selected} />
+    {#if loaded}
+        <Leaderboards folder={selected} />
+    {/if}
     <footer class="mt-12 mb-8">
         <p>
             gofish by <a href="https://twitch.tv/breadworms">breadworms</a>
