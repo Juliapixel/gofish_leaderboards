@@ -7,7 +7,12 @@
     let loaded = false;
     onMount(() => {
         let stored = localStorage.getItem("channel");
-        selected = stored === null ? selected : (stored as string);
+        let params = new URLSearchParams(window.location.search);
+        if (params.has("channel")) {
+            selected = params.get("channel") as string;
+        } else {
+            selected = stored === null ? selected : (stored as string);
+        }
         loaded = true;
     });
 
