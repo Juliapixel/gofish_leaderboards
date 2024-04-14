@@ -27,7 +27,7 @@
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
     <span>channel: </span><select bind:value={selected} on:change={storeChannel} class="mt-5 mb-5">
         <option value="global">global</option>
-        <option value="bw">breadworms</option>
+        <option value="bread">breadworms</option>
         <option value="psp">psp1g</option>
     </select>
 
