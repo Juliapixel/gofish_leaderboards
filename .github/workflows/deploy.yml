@@ -43,4 +43,11 @@ jobs:
           set -eu -o pipefail
           echo "$SSH_RSA_KEY" > actions_rsa;
           chmod 600 actions_rsa;
-          rsync -azv --chown=root:leaderboard_dev --chmod=D775,F664 --del -O -e "ssh -o StrictHostKeyChecking=no -i actions_rsa" ./build/* github_actions@${{ secrets.VPS_IP }}:/var/www/gofish_leaderboard
+          rsync \
+            -azv \
+            --del \
+            -O \
+            --chown=root:leaderboard_dev --chmod=D775,F664 \
+            -e "ssh -o StrictHostKeyChecking=no \
+            -i actions_rsa" \
+            ./build/* github_actions@${{ secrets.VPS_IP }}:/var/www/gofish_leaderboard
