@@ -1,5 +1,6 @@
 <script lang="ts">
     import { marked } from "marked";
+    import { slide } from "svelte/transition";
 
     export let url: string;
 
@@ -12,8 +13,10 @@
 
 <div>
     {#await request(url)}
-        Loading...
+        <!-- yea -->
     {:then resp}
-        {@html marked.parse(resp)}
+        <div transition:slide={{duration: 250}}>
+            {@html marked.parse(resp)}
+        </div>
     {/await}
 </div>
