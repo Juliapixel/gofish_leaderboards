@@ -10,8 +10,10 @@
     }
 </script>
 
-{#await request(url)}
-    Loading...
-{:then resp}
-    {@html marked.parse(resp)}
-{/await}
+<div>
+    {#await request(url)}
+        Loading...
+    {:then resp}
+        {@html marked.parse(resp)}
+    {/await}
+</div>
