@@ -3,7 +3,13 @@
 
     export let folder: string;
 </script>
-
+{#if folder == "global"}
+    <div class="w-fit max-w-full my-24 mx-auto">
+        <AsyncMarkdownReq
+            url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/chats.md"
+        />
+    </div>
+{/if}
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
     <!-- this is not a hack shut up -->
     {#if folder != "global"}
