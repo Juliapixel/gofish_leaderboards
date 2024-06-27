@@ -10,21 +10,21 @@
         return md;
     }
 
-    const tableDiver: Partial<Renderer> = {
-        tablecell(content, _flags) {
-            return `<td><div class="flex flex-row gap-1.5">${content}</div></td>`;
+    // TailwindCSS makes img elements have display: block for *some* reason so
+    // this fixes it in this very specific instance ehehe
+    const imgFixer: Partial<Renderer> = {
+        image(href, title, text) {
+            return `<img src=${href} title=${title ?? text} alt=${text} style="display: inline-block;" />`;
         }
     };
 
-    marked.use({ renderer: tableDiver });
+    marked.use({ renderer: imgFixer });
 </script>
 
-<div>
-    {#await request(url)}
-        <!-- yea -->
-    {:then resp}
-        <div transition:slide={{ duration: 250 }}>
-            {@html marked.parse(resp)}
-        </div>
-    {/await}
-</div>
+{#await request(url)}
+    <!-- yea -->
+{:then resp}
+    <div transition:slide={{ duration: 250 }}>
+        {@html marked.parse(resp)}
+    </div>
+{/await}
