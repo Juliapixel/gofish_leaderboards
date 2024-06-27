@@ -18,9 +18,9 @@
 
     function changeParams(this: HTMLSelectElement) {
         let params = new URLSearchParams(window.location.search);
-        params.set("channel", this.value)
-        let url = window.location.pathname + "?" + String(params)
-        window.history.replaceState(null, "", url)
+        params.set("channel", this.value);
+        let url = window.location.pathname + "?" + String(params);
+        window.history.replaceState(null, "", url);
     }
 
     function storeChannel(this: HTMLSelectElement) {
@@ -32,7 +32,12 @@
 
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
-    <span>channel: </span><select bind:value={selected} on:change={changeParams} on:change={storeChannel} class="mt-5 mb-5">
+    <span>channel: </span><select
+        bind:value={selected}
+        on:change={changeParams}
+        on:change={storeChannel}
+        class="mt-5 mb-5"
+    >
         <option value="global">global</option>
         <option value="breadworms">breadworms</option>
         <option value="psp1g">psp1g</option>

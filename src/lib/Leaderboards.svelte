@@ -3,6 +3,7 @@
 
     export let folder: string;
 </script>
+
 {#if folder == "global"}
     <div class="w-fit max-w-full my-24 mx-auto">
         <AsyncMarkdownReq
