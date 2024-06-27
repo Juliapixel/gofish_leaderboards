@@ -12,7 +12,6 @@
 
     const tableDiver: Partial<Renderer> = {
         tablecell(content, _flags) {
-            console.log("zuh", content);
             return `<td><div class="flex flex-row gap-1.5">${content}</div></td>`;
         }
     };
