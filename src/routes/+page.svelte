@@ -26,21 +26,34 @@
     function storeChannel(this: HTMLSelectElement) {
         localStorage.setItem("channel", this.value);
     }
+
+    /** only those which have individual leadeboards */
+    const channels = [
+        "global",
+        "breadworms",
+        "psp1g",
+        "julialuxel"
+        // "ovrht",
+        // "d_egree",
+        // "ajspyman",
+        // "ryanpotat",
+    ];
 </script>
 
 <Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
 
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
-    <span>channel: </span><select
+    <span>channel: </span>
+    <select
         bind:value={selected}
         on:change={changeParams}
         on:change={storeChannel}
         class="mt-5 mb-5"
     >
-        <option value="global">global</option>
-        <option value="breadworms">breadworms</option>
-        <option value="psp1g">psp1g</option>
+        {#each channels as channel}
+            <option value={channel}>{channel}</option>
+        {/each}
     </select>
 
     {#if loaded}
