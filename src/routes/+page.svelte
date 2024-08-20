@@ -32,11 +32,10 @@
         "global",
         "breadworms",
         "psp1g",
-        "julialuxel"
-        // "ovrht",
-        // "d_egree",
-        // "ajspyman",
-        // "ryanpotat",
+        "julialuxel",
+        "ovrht",
+        "omie",
+        "vaiastol"
     ];
 </script>
 

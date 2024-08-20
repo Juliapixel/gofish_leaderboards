@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { dev } from "$app/environment";
     import { marked, Renderer } from "marked";
     import { slide } from "svelte/transition";
 
@@ -6,6 +7,13 @@
 
     async function request(url: string): Promise<string> {
         let res = await fetch(url);
+        if (!res.ok) {
+            let err = new Error(`request to ${url} failed: ${res.status}`);
+            if (dev) {
+                console.warn(err);
+            }
+            throw err;
+        }
         let md = await res.text();
         return md;
     }
@@ -27,4 +35,6 @@
     <div transition:slide={{ duration: 250 }}>
         {@html marked.parse(resp)}
     </div>
+{:catch}
+    <!-- nothing if it errors -->
 {/await}
