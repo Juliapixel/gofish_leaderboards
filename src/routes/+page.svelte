@@ -32,18 +32,10 @@
 
     /** only those which have individual leadeboards */
     const channels = ["global", "breadworms", "psp1g", "julialuxel", "ovrht", "omie", "vaiastol"];
-
-    // should be removed in the future
-    const isOldDomain = browser ? window.location.hostname !== "gofish.lol" : false;
 </script>
 
 <Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
 
-{#if isOldDomain}
-    <header class="p-4 text-3xl text-center bg-neutral-800">
-        Please use the new domain: <a href="https://gofish.lol/">https://gofish.lol/</a>
-    </header>
-{/if}
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
     <span>channel: </span>
