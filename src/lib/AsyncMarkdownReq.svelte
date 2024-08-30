@@ -22,7 +22,7 @@
     // this fixes it in this very specific instance ehehe
     const imgFixer: Partial<Renderer> = {
         image(href, title, text) {
-            return `<img src=${href} title=${title ?? text} alt=${text} style="display: inline-block;" />`;
+            return `<img src=${href} title=${title ?? text} alt=${text} style="display: inline-block; max-width: none;" />`;
         }
     };
 
