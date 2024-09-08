@@ -34,4 +34,7 @@
     <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/type.md"
     />
+    <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/uniquefish.md"
+    />
 </div>
