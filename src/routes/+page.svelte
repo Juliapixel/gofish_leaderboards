@@ -31,7 +31,7 @@
     }
 
     /** only those which have individual leadeboards */
-    const channels = ["global", "breadworms", "psp1g", "julialuxel", "ovrht", "omie", "vaiastol"];
+    const channels = ["global", "breadworms", "psp1g", "dizzy", "julialuxel", "ovrht", "omie", "vaiastol"];
 </script>
 
 <Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
