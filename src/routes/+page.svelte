@@ -34,7 +34,7 @@
     const channels = ["global", "breadworms", "psp1g", "dizzy", "julialuxel", "ovrht", "omie", "vaiastol"];
 </script>
 
-<Meta description="Leaderboards for gofish" title="gofish leaderboards" image="/favicon.png" />
+<Meta description="Leaderboards for gofish" title="unofficial gofish leaderboards" image="/favicon.png" />
 
 <div class="ml-8 mr-8 lg:ml-32 lg:mr-32">
     <h1 class="mb-4 mt-8">gofish leaderboards! 🎣 🤩 🏆</h1>
