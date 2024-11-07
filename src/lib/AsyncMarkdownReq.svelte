@@ -1,6 +1,6 @@
 <script lang="ts">
     import { dev } from "$app/environment";
-    import { marked, Renderer } from "marked";
+    import { marked, type Renderer } from "marked";
     import { slide } from "svelte/transition";
 
     export let url: string;
