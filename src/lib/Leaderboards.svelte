@@ -29,6 +29,9 @@
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weight.md"
     />
     <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/typesmall.md"
+    />
+    <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/count.md"
     />
     <AsyncMarkdownReq
