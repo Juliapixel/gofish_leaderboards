@@ -24,23 +24,31 @@
         <AsyncMarkdownReq
             url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/rare.md"
         />
+        <AsyncMarkdownReq
+            url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/averageweight.md"
+        />
     {/if}
     <AsyncMarkdownReq
-        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weight.md"
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/type.md"
     />
     <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/typesmall.md"
     />
     <AsyncMarkdownReq
-        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/count.md"
-    />
-    <AsyncMarkdownReq
-        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/type.md"
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weight.md"
     />
     <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/records.md"
     />
     <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/count.md"
+    />
+    <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/uniquefish.md"
     />
+    {#if folder == "global"}
+        <AsyncMarkdownReq
+            url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/shiny.md"
+        />
+    {/if}
 </div>
