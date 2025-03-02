@@ -33,12 +33,17 @@
     /** only those which have individual leadeboards */
     const channels = [
         "global",
+        "aquaismissing",
         "breadworms",
-        "psp1g",
+        "coolishdanker",
+        "d_egree",
         "dizzy",
+        "jellyuh",
         "julialuxel",
         "ovrht",
         "omie",
+        "psp1g",
+        "swormbeard",
         "vaiastol",
         "wuh6"
     ];
