@@ -71,7 +71,7 @@
             soon as possible.
         </p>
         <p class="mb-2">
-            You can contact me @breadworms on Discord or
+            You can contact me @breadworms on Discord and
             <a href="https://x.com/breadworms">Twitter</a>
             if you have any questions.
         </p>
