@@ -35,6 +35,12 @@
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/typesmall.md"
     />
     <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/typefirst.md"
+    />
+    <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/typelast.md"
+    />
+    <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/count.md"
     />
     <AsyncMarkdownReq
@@ -47,9 +53,15 @@
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weight2.md"
     />
     <AsyncMarkdownReq
+        url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weighttotal.md"
+    />
+    <AsyncMarkdownReq
         url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/records.md"
     />
     {#if folder == "global"}
+        <AsyncMarkdownReq
+            url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/weightmouth.md"
+        />
         <AsyncMarkdownReq
             url="https://raw.githubusercontent.com/blableblup/gofish/main/leaderboards/{folder}/shiny.md"
         />
