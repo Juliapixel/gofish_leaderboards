@@ -61,21 +61,6 @@
 />
 
 <div class="mx-8 my-8 lg:ml-32 lg:mr-32">
-    <div class="lg:mx-96 p-8 border-2 rounded-lg">
-        <h1 class="mb-4 text-4xl text-white">The bot is currently down.</h1>
-        <h2 class="text-xl mb-2">A message from breadworms</h2>
-        <p class="mb-2">
-            Hi, I'm breadworms, the author of GO FISH GAME. My Twitch account has been indefinitely
-            suspended and I've submitted an appeal. The account gofishgame was suspended in tandem.
-            Aside from GO FISH GAME I'm a streamer and am hoping to have the situation resolved as
-            soon as possible.
-        </p>
-        <p class="mb-2">
-            You can contact me @breadworms on Discord and
-            <a href="https://x.com/breadworms">Twitter</a>
-            if you have any questions.
-        </p>
-    </div>
     <h1 class="mb-4 mt-8">unofficial gofish leaderboards! 🎣 🤩 🏆</h1>
     <span>channel: </span>
     <select
