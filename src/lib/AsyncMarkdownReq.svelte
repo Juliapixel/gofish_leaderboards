@@ -31,9 +31,9 @@
                 // const parser = new DOMParser()
                 // const doc = parser.parseFromString(content, "text/html")
                 const elem = flags.header ? "th" : "td"
-                let user_id = map.get(content.trim().replace(/\*$/, ""));
-                if (user_id) {
-                    content = `<a href="/profile?id=${user_id}">${content}</a>`
+                let maybeLogin = content.trim().replace(/\*$/, "")
+                if (map.get(maybeLogin)) {
+                    content = `<a href="/profile?user=${maybeLogin}">${content}</a>`
                 }
                 return `<${elem}>${content}</${elem}>`
             },
