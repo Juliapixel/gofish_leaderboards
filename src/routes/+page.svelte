@@ -60,35 +60,18 @@
     image="/favicon.png"
 />
 
-<div class="mx-8 my-8 lg:ml-32 lg:mr-32">
-    <h1 class="mb-4 mt-8">unofficial gofish leaderboards! 🎣 🤩 🏆</h1>
-    <span>channel: </span>
-    <select
-        bind:value={selected}
-        on:change={changeParams}
-        on:change={storeChannel}
-        class="mt-5 mb-5"
-    >
-        {#each channels as channel}
-            <option value={channel}>{channel}</option>
-        {/each}
-    </select>
+<span>channel: </span>
+<select
+    bind:value={selected}
+    on:change={changeParams}
+    on:change={storeChannel}
+    class="mt-5 mb-5"
+>
+    {#each channels as channel}
+        <option value={channel}>{channel}</option>
+    {/each}
+</select>
 
-    {#if loaded}
-        <Leaderboards folder={selected} />
-    {/if}
-    <footer class="mt-12 mb-8">
-        <p>
-            gofish by <a href="https://twitch.tv/breadworms">breadworms</a>
-        </p>
-        <p>
-            website source code <a href="https://github.com/Juliapixel/gofish_leaderboards">here</a>
-        </p>
-        <p>
-            data sourced from <a href="https://github.com/blableblup/gofish">here</a>
-        </p>
-        <p class="text-center mt-8 text-neutral-500">
-            {">~<"}
-        </p>
-    </footer>
-</div>
+{#if loaded}
+    <Leaderboards folder={selected} />
+{/if}

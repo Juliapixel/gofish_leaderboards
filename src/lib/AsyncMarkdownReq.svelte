@@ -1,5 +1,6 @@
 <script lang="ts">
     import { dev } from "$app/environment";
+    import { USER_MAP } from "$lib";
     import { marked, type Renderer } from "marked";
     import { slide } from "svelte/transition";
 
@@ -18,23 +19,42 @@
         return md;
     }
 
-    // TailwindCSS makes img elements have display: block for *some* reason so
-    // this fixes it in this very specific instance ehehe
-    const imgFixer: Partial<Renderer> = {
-        image(href, title, text) {
-            return `<img src=${href} title=${title ?? text} alt=${text} style="display: inline-block; max-width: none;" />`;
-        }
-    };
+    let markedSetting = USER_MAP.then((map) => {
+        // TailwindCSS makes img elements have display: block for *some* reason so
+        // this fixes it in this very specific instance ehehe
+        const imgFixer: Partial<Renderer> = {
+            image(href, title, text) {
+                return `<img src=${href} title=${title ?? text} alt=${text} style="display: inline-block; max-width: none;" />`;
+            },
+            tablecell(content, flags) {
+                // TODO: modify the html
+                // const parser = new DOMParser()
+                // const doc = parser.parseFromString(content, "text/html")
+                const elem = flags.header ? "th" : "td"
+                let user_id = map.get(content.trim().replace(/\*$/, ""));
+                if (user_id) {
+                    content = `<a href="/profile?id=${user_id}">${content}</a>`
+                }
+                return `<${elem}>${content}</${elem}>`
+            },
+        };
 
-    marked.use({ renderer: imgFixer });
+        marked.use({ renderer: imgFixer });
+    });
+
+
 </script>
 
-{#await request(url)}
-    <!-- yea -->
-{:then resp}
+{#await Promise.all([request(url), markedSetting])}
+    <div>
+        Loading...
+    </div>
+{:then [resp, _]}
     <div transition:slide={{ duration: 250 }}>
         {@html marked.parse(resp)}
     </div>
-{:catch}
-    <!-- nothing if it errors -->
+{:catch e}
+    {#if dev}
+        <div class="text-red-400">{e}</div>
+    {/if}
 {/await}
