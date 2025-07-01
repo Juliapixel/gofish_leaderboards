@@ -4,24 +4,22 @@
     import UserProfile from "$lib/UserProfile.svelte";
 
     const urlParams = browser ? new URLSearchParams(location.search) : new URLSearchParams();
-    const user = urlParams.get("user")
+    const user = urlParams.get("user");
 
-    async function getUserInfo(user: string) {
-        let id = (await USER_MAP).get(user)
-        const resp = await fetch(`https://raw.githubusercontent.com/blableblup/gofish/refs/heads/main/leaderboards/global/profiles/${id}.json`)
-        if (resp.ok) {
-            return await resp.json()
-        } else {
-            return
-        }
+    async function getUserID(user: string): Promise<number | undefined> {
+        return (await USER_MAP).get(user);
     }
 </script>
 
 {#if user}
-    {#await getUserInfo(user)}
+    {#await getUserID(user)}
         Loading...
-    {:then userInfo}
-        <UserProfile userData={userInfo} />
+    {:then userId}
+        {#if userId}
+            <UserProfile id={userId} />
+        {:else}
+            <a href="/">Go back</a>
+        {/if}
     {/await}
 {:else}
     <a href="/">Go back</a>

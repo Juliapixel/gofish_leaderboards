@@ -11,8 +11,32 @@
         @apply text-blue-500 cursor-pointer;
     }
 
+    p + p {
+        @apply mt-2;
+    }
+
+    table {
+        @apply my-2;
+    }
+
+    ul {
+        @apply my-2;
+    }
+
+    ul > li {
+        @apply list-disc list-inside;
+    }
+
+    li > *:first-child {
+        @apply inline;
+    }
+
     h1 {
-        @apply text-3xl;
+        @apply text-3xl mb-4;
+    }
+
+    h2 {
+        @apply text-xl font-bold mb-2;
     }
 
     h3 {
@@ -36,12 +60,12 @@
         @apply text-neutral-500 text-sm;
     }
 
-    tr:nth-child(2n + 1) {
+    tr:nth-child(2n) {
         @apply bg-neutral-800;
     }
 
     th {
-        @apply text-left p-2 border-l border-l-neutral-700 border-b border-b-neutral-500;
+        @apply text-left p-2 bg-neutral-800 border-l border-l-neutral-700 border-b border-b-neutral-500;
     }
 
     td {

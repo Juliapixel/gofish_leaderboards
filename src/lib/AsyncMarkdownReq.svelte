@@ -30,25 +30,21 @@
                 // TODO: modify the html
                 // const parser = new DOMParser()
                 // const doc = parser.parseFromString(content, "text/html")
-                const elem = flags.header ? "th" : "td"
-                let maybeLogin = content.trim().replace(/\*$/, "")
+                const elem = flags.header ? "th" : "td";
+                let maybeLogin = content.trim().replace(/\*$/, "");
                 if (map.get(maybeLogin)) {
-                    content = `<a href="/profile?user=${maybeLogin}">${content}</a>`
+                    content = `<a href="/profile?user=${maybeLogin}">${content}</a>`;
                 }
-                return `<${elem}>${content}</${elem}>`
-            },
+                return `<${elem}>${content}</${elem}>`;
+            }
         };
 
         marked.use({ renderer: imgFixer });
     });
-
-
 </script>
 
 {#await Promise.all([request(url), markedSetting])}
-    <div>
-        Loading...
-    </div>
+    <div>Loading...</div>
 {:then [resp, _]}
     <div transition:slide={{ duration: 250 }}>
         {@html marked.parse(resp)}

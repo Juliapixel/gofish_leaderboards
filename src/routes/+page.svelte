@@ -61,12 +61,7 @@
 />
 
 <span>channel: </span>
-<select
-    bind:value={selected}
-    on:change={changeParams}
-    on:change={storeChannel}
-    class="mt-5 mb-5"
->
+<select bind:value={selected} on:change={changeParams} on:change={storeChannel} class="mt-5 mb-5">
     {#each channels as channel}
         <option value={channel}>{channel}</option>
     {/each}
