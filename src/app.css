@@ -77,7 +77,7 @@
     }
 
     summary {
-        @apply p-2 max-w-fit rounded-xl bg-zinc-800 cursor-pointer select-none;
+        @apply py-2 px-3 max-w-fit rounded-xl bg-neutral-800 cursor-pointer select-none;
     }
 
     table details {
