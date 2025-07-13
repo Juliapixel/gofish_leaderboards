@@ -71,4 +71,22 @@
     td {
         @apply p-1 border-l border-l-neutral-700;
     }
+
+    details {
+        @apply my-2;
+    }
+
+    summary {
+        @apply py-2 px-3 max-w-fit rounded-xl bg-neutral-800 cursor-pointer select-none;
+    }
+
+    table details {
+        @apply my-0;
+    }
+
+    table summary {
+        @apply p-1 bg-transparent;
+
+        display: inline list-item;
+    }
 }
