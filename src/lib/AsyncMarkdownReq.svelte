@@ -33,7 +33,7 @@
                 const elem = flags.header ? "th" : "td";
                 let maybeLogin = content.trim().replace(/\*$/, "");
                 if (map.get(maybeLogin)) {
-                    content = `<a href="/profile?user=${maybeLogin}">${content}</a>`;
+                    content = `<a href="/profile/?user=${maybeLogin}">${content}</a>`;
                 }
                 return `<${elem}>${content}</${elem}>`;
             }
